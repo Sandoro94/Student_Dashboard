@@ -129,14 +129,14 @@ const HomePage=() => {
                 <input 
                     type="checkbox"
                     OnClick={checkChecked}
-                    value="moeilijk"
+                    value="leuk"
                 />
                 Verwijder Gemiddelde score Moeilijk 
                 <br />
                 <input 
                     type="checkbox"
                     OnClick={checkChecked}
-                    value="leuk"
+                    value="moeilijk"
                 />
                 Verwijder Gemiddelde score Leuk
             </div>
