@@ -7,12 +7,22 @@
   pointer-events: none;
 }
 
+
+
+.content{
+  border-style: double;
+
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
+.VictoryContainer{
+  border: 5px;
+  color: #282c34;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -35,4 +45,36 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.App {
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background-color: rgba(188, 210, 228, 0.959);
+  color: white;
+  height: 100px;
+}
+
+.nav-links {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  flex-shrink: 2;
+  flex-wrap: wrap;
+}
+
+.studentName {
+  color: rgb(21, 104, 172)
+}
+
+.selectWhatToShow {
+  padding: 20px;
 }

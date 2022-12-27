@@ -85,7 +85,7 @@ const Student= () => {
                     externalEventMutations= {externalMutations}>
                         <VictoryLegend
                             x={60}
-                            y={0}
+                            y={-10}
                             title="legenda"
                             centerTitle
                             orientation="horizontal"
@@ -95,8 +95,9 @@ const Student= () => {
                                 title: {fontSize: 20},
                             }}
                             data={[
-                                {name: "moeilijk", symbol: {fill:"rgb(73, 151, 216)"}},
-                                {name: "leuk", symbol: { fill: "rgb(218, 161, 247)" } },
+                                {name: "moeilijk", symbol: { fill: "rgb(218, 161, 247)" } },
+                                {name: "leuk", symbol: {fill:"rgb(73, 151, 216)"}},
+                                
                             ]}
                         />
 
@@ -111,6 +112,7 @@ const Student= () => {
                                         fill: "rgb(73, 151, 216)",
                                     }
                                 }}
+                                alignment="end"
                                 barRatio={5}
                                 barWidth={5}
                             />
@@ -123,9 +125,10 @@ const Student= () => {
                                 y="leuk"
                                 style={{
                                     data: {
-                                        fill: "rgb(73, 151, 216)",
+                                        fill: "rgb(218, 161, 247)",
                                     }
                                 }}
+                                alignment="start"
                                 barRatio={5}
                                 barWidth={5}
                             />
@@ -148,14 +151,14 @@ const Student= () => {
                 onClick={checkChecked}
                 value="moeilijk"
                 />
-            Verwijder de gemiddelde scores Moeilijk
+            Verwijder de gemiddelde scores: Leuk
             <br />
                 <input 
                 type="checkbox"
                 onClick={checkChecked}
                 value="leuk"
                 />
-            Verwijder de gemiddelde scores Leuk
+            Verwijder de gemiddelde scores: Moeilijk
             </div>
         </div>
     )

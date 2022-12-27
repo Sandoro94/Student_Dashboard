@@ -7,7 +7,6 @@ import{
     VictoryBar,
     VictoryChart,
     VictoryGroup,
-    VictoryLabel,
     VictoryLegend,
     VictoryZoomContainer
 } from "victory";

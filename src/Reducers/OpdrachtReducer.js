@@ -1,4 +1,3 @@
-//import data from "../data/data";
 import data from "../data/result.json"
 import {v4 as uuidv4} from "uuid" 
 
@@ -24,7 +23,7 @@ const opdrachten = perOpdracht.map((opdracht) => {
     (prev, curr) => parseInt(prev) + parseInt(curr)
   );
   const gemiddeldeScoreLeuk = totaleScoreLeuk / leuk.length;
-  
+
   const opdrachtNaam = naam.length > 6 ? naam.substr(0, naam.indexOf(" ")) : naam;
 
   return {
