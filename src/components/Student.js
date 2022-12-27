@@ -22,8 +22,8 @@ const Student= () => {
 
         return{
             opdracht: opdrachtNaam,
-            moeilijk: parseInt(opdracht.moeilijk),
-            leuk: parseInt(opdracht.leuk),
+            uitdaging: parseInt(opdracht.moeilijk),
+            plezier: parseInt(opdracht.leuk),
         }
     })
     const [externalMutations, setExternalMutations] = useState(undefined)
