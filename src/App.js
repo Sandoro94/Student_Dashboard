@@ -7,26 +7,7 @@ import Student from "./components/Student"
 //import {Routes, Route, Switch, Link} from "react-router-dom"
 //import Footer from './containers/Footer'
 
-/*
-function App(){
-  return (
-    <Router>
-      <div className="App">
-        <NavBar />
-        <div className='content'>
-          <Switch>
-            <Route path='/' exact component={HomePage} />
-          </Switch>
 
-          <Switch>
-            <Route path="/:student" component={Student} />
-          </Switch>
-        </div>
-      </div>
-    </Router>
-  )
-}
-*/
 function App(){
   return (
     <Router>
@@ -34,11 +15,8 @@ function App(){
         <NavBar />
         <div className='content'>
           <Routes>
-            <Route path='/' exact component={HomePage} />
-          </Routes>
-
-          <Routes>
-            <Route path="/:student" component={Student} />
+            <Route path='/' exact element={ <HomePage/>} />
+            <Route path="/:student" exact element={<Student/>} />
           </Routes>
         </div>
       </div>

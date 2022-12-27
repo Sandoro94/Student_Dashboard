@@ -1,6 +1,7 @@
 import React from "react"
 import { useState } from "react"
 import { useSelector } from "react-redux" 
+import { useParams } from "react-router-dom"
 import { 
 VictoryBar, 
 VictoryChart,
@@ -10,9 +11,9 @@ VictoryLabel,
 VictoryZoomContainer,
 VictoryLegend, } from "victory"
 
-const Student= ({match}) => {
+const Student= () => {
     const studenten = useSelector((state) => state.studenten)
-    const naam = match.params.studentNaam
+    const {student: naam} = useParams()
     const student = studenten.find((student) => student.studentNaam===naam)
 
     const opdrachten= student.opdrachten.map((opdracht) =>{
@@ -85,7 +86,7 @@ const Student= ({match}) => {
                             }}
                             data={[
                                 {name: "moeilijk", symbol: {fill:"rgb(73, 151, 216)"}},
-                                { name: "leuk", symbol: { fill: "rgb(218, 161, 247)" } },
+                                {name: "leuk", symbol: { fill: "rgb(218, 161, 247)" } },
                             ]}
                         />
 
