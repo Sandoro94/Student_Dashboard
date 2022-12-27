@@ -42,6 +42,16 @@ const HomePage=() => {
                         ? {style: {opacity: 1, fill:"rgb(73, 151, 216)"}}
                         : { style: { opacity: 1, fill: "rgb(218, 161, 247)"}},
                     callback: removeMutation,
+                },
+                {
+                    childName: event.target.value,
+                    target: ["data"],
+                    eventKey: "all",
+                    mutation: () =>
+                        event.target.value === "leuk"
+                        ? {style: {opacity: 1, fill:"rgb(73, 151, 216)"}}
+                        : { style: { opacity: 1, fill: "rgb(218, 161, 247)"}},
+                    callback: removeMutation,
                 }
             ])
         }
@@ -93,10 +103,10 @@ const HomePage=() => {
                             barWidth={5}
                         />
                         <VictoryBar
-                            name="moeilijk"
+                            name="leuk"
                             data={opdrachten}
                             x="opdrachtnaam"
-                            y="gemiddeldeScoreMoeilijk"
+                            y="gemiddeldeScoreLeuk"
                             style={{
                                 data: {
                                     fill: "rgb(218, 161, 247)",

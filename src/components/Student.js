@@ -22,8 +22,8 @@ const Student= () => {
 
         return{
             opdracht: opdrachtNaam,
-            uitdaging: parseInt(opdracht.moeilijk),
-            plezier: parseInt(opdracht.leuk),
+            moeilijk: parseInt(opdracht.uitdaging),
+            leuk: parseInt(opdracht.plezier),
         }
     })
     const [externalMutations, setExternalMutations] = useState(undefined)
@@ -51,6 +51,16 @@ const Student= () => {
                     eventKey: "all",
                     mutation: () => 
                         event.target.value === "moeilijk"
+                        ? {style: {opacity: 1, fill: "rgb(73, 151, 216)"}}
+                        : { style: { opacity: 1, fill: "rgb(218, 161, 247)"}},
+                        callback: removeMutation,
+                },
+                {
+                    childName: event.target.value,
+                    target: ["data"],
+                    eventKey: "all",
+                    mutation: () => 
+                        event.target.value === "leuk"
                         ? {style: {opacity: 1, fill: "rgb(73, 151, 216)"}}
                         : { style: { opacity: 1, fill: "rgb(218, 161, 247)"}},
                         callback: removeMutation,
@@ -105,7 +115,21 @@ const Student= () => {
                                 barWidth={5}
                             />
                         </VictoryGroup>
-                        
+                        <VictoryGroup offset={5}>
+                            <VictoryBar
+                                name="leuk"
+                                data={opdrachten}
+                                x="opdracht"
+                                y="leuk"
+                                style={{
+                                    data: {
+                                        fill: "rgb(73, 151, 216)",
+                                    }
+                                }}
+                                barRatio={5}
+                                barWidth={5}
+                            />
+                        </VictoryGroup>
                         <VictoryAxis
                             tickLabelComponent={<VictoryLabel angle={40} textAnchor="start" />}
                         />
@@ -126,11 +150,11 @@ const Student= () => {
                 />
             Verwijder de gemiddelde scores Moeilijk
             <br />
-            <input 
-            type="checkbox"
-            onClick={checkChecked}
-            value="leuk"
-            />
+                <input 
+                type="checkbox"
+                onClick={checkChecked}
+                value="leuk"
+                />
             Verwijder de gemiddelde scores Leuk
             </div>
         </div>
