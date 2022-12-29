@@ -7,6 +7,7 @@ import{
     VictoryBar,
     VictoryChart,
     VictoryGroup,
+    VictoryLabel,
     VictoryLegend,
     VictoryZoomContainer
 } from "victory";
@@ -67,30 +68,29 @@ const HomePage=() => {
                     containerComponent={
                         <VictoryZoomContainer zoomDimension="x" allowPan={false} allowZoom={false} zoomDomain={{x: [0, 20]}} />
                     }
-                    externalEventMutations={externalMutations}
-                >
+                    externalEventMutations={externalMutations} >
                     <VictoryLegend 
-                    x={60}
-                    y={0}
-                    title="legenda"
-                    centerTitle
-                    orientation="horizontal"
-                    gutter={30}
-                    style={{
-                        border: {stroke: "rgb(21, 104, 172"},
-                        title: {fontSize: 20},
-                    }}
-                    data= {[
-                        {name: "moeilijk", symbol: {fill: "rgb(73, 151,216)"}},
-                        {name: "leuk", symbol: {fill: "rgb(218, 161, 247)" }},
-                    ]}
+                        x={60}
+                        y={-10}
+                        title="legenda"
+                        centerTitle
+                        orientation="horizontal"
+                        gutter={30}
+                        style={{
+                            border: {stroke: "rgb(21, 104, 172"},
+                            title: {fontSize: 20},
+                        }}
+                        data= {[
+                            {name: "moeilijk", symbol: {fill: "rgb(73, 151,216)"}},
+                            {name: "leuk", symbol: {fill: "rgb(218, 161, 247)" }},
+                        ]}
                     />
 
                     <VictoryGroup offset={5}>
                         <VictoryBar
                             name="moeilijk"
                             data={opdrachten}
-                            x="opdrachtnaam"
+                            x="opdracht"
                             y="gemiddeldeScoreMoeilijk"
                             style={{
                                 data: {
@@ -101,6 +101,7 @@ const HomePage=() => {
                             barRatio={5}
                             barWidth={5}
                         />
+                        
                         <VictoryBar
                             name="leuk"
                             data={opdrachten}
@@ -116,6 +117,9 @@ const HomePage=() => {
                             barWidth={5}
                         />
                     </VictoryGroup>
+                    <VictoryAxis
+                            tickLabelComponent={<VictoryLabel angle={40} textAnchor="start" />}
+                        />
                     <VictoryAxis 
                         tickFormat={[1, 2, 3, 4, 5]}
                         tickValues={[1, 2, 3, 4, 5]}

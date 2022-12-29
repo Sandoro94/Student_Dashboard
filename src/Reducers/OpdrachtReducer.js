@@ -11,14 +11,14 @@ const opdrachten = perOpdracht.map((opdracht) => {
   const namen = opdracht.map((opdracht) => opdracht.opdracht);
   const naam = namen[1];
 
-
-  const moeilijk = opdracht.map((opdracht) => opdracht.moeilijk);
+  const moeilijk = opdracht.map((opdracht) => opdracht.uitdaging);
   const totaleScoreMoeilijk = moeilijk.reduce(
     (prev, curr) => parseInt(prev) + parseInt(curr)
   );
+  console.log(totaleScoreMoeilijk)
   const gemiddeldeScoreMoeilijk = totaleScoreMoeilijk / moeilijk.length;
 
-  const leuk = opdracht.map((opdracht) => opdracht.leuk);
+  const leuk = opdracht.map((opdracht) => opdracht.plezier);
   const totaleScoreLeuk = leuk.reduce(
     (prev, curr) => parseInt(prev) + parseInt(curr)
   );
