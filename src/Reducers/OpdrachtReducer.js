@@ -15,7 +15,6 @@ const opdrachten = perOpdracht.map((opdracht) => {
   const totaleScoreMoeilijk = moeilijk.reduce(
     (prev, curr) => parseInt(prev) + parseInt(curr)
   );
-  console.log(totaleScoreMoeilijk)
   const gemiddeldeScoreMoeilijk = totaleScoreMoeilijk / moeilijk.length;
 
   const leuk = opdracht.map((opdracht) => opdracht.plezier);

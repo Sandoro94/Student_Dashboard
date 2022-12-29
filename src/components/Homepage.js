@@ -14,6 +14,8 @@ import{
 
 const HomePage=() => {
     const opdrachten = useSelector((state) => state.opdrachten)
+
+    
     const [externalMutations, setExternalMutations] = useState(undefined)
 
     const removeMutation = () => {
@@ -66,12 +68,12 @@ const HomePage=() => {
                     domain={{y:[0,5]}}
                     width={1200}
                     containerComponent={
-                        <VictoryZoomContainer zoomDimension="x" allowPan={false} allowZoom={false} zoomDomain={{x: [0, 20]}} />
+                        <VictoryZoomContainer zoomDimension="x" allowPan allowZoom={false} zoomDomain={{x: [0, 20]}}  />
                     }
                     externalEventMutations={externalMutations} >
                     <VictoryLegend 
                         x={60}
-                        y={-10}
+                        y={-20}
                         title="legenda"
                         centerTitle
                         orientation="horizontal"
@@ -130,18 +132,18 @@ const HomePage=() => {
             
             <div className="selectWhatToShow">
                 <input 
-                    type="checkbox"
-                    OnClick={checkChecked}
-                    value="leuk"
+                type="checkbox"
+                onClick={checkChecked}
+                value="moeilijk"
                 />
-                Verwijder Gemiddelde score Moeilijk 
-                <br />
+            Verwijder de gemiddelde scores: Leuk
+            <br />
                 <input 
-                    type="checkbox"
-                    OnClick={checkChecked}
-                    value="moeilijk"
+                type="checkbox"
+                onClick={checkChecked}
+                value="leuk"
                 />
-                Verwijder Gemiddelde score Leuk
+            Verwijder de gemiddelde scores: Moeilijk
             </div>
         </div>
     )

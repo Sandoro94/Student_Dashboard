@@ -64,8 +64,7 @@ nav {
 
 .chart{
   border-style: double;
-  overflow-x: scroll;
-  overflow-y: visible;
+  overflow-y: auto;
   height: 700px;
   width: fit-content;
 }

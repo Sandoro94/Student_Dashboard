@@ -18,8 +18,9 @@ const Student= () => {
 
     const opdrachten= student.opdrachten.map((opdracht) =>{
         const naam = opdracht.opdracht
+        
         const opdrachtNaam = naam.length > 6 ? naam.substr(0, naam.indexOf("")) : naam
-
+        
         return{
             opdracht: opdrachtNaam,
             moeilijk: parseInt(opdracht.uitdaging),
@@ -29,7 +30,7 @@ const Student= () => {
     const [externalMutations, setExternalMutations] = useState(undefined)
     
     const removeMutation= () => {setExternalMutations([{externalMutations: undefined}]);
-}
+    }
 
     const checkChecked = (event) => {
         const checkbox = event.target
@@ -80,12 +81,12 @@ const Student= () => {
                     domain={{ y: [0, 5] }}
                     width={1200}
                     containerComponent={
-                        <VictoryZoomContainer zoomDimension="x" allowPan={false} allowZoom={false} zoomDomain={{x: [0, 20]}} />
+                        <VictoryZoomContainer zoomDimension="x" allowPan allowZoom={false} zoomDomain={{x: [0, 20]}} />
                     }
                     externalEventMutations= {externalMutations}>
                         <VictoryLegend
                             x={60}
-                            y={-10}
+                            y={-20}
                             title="legenda"
                             centerTitle
                             orientation="horizontal"
@@ -145,6 +146,7 @@ const Student= () => {
 
                     </VictoryChart>
             </div>
+            
             <div className="selectWhatToShow">
                 <input 
                 type="checkbox"
