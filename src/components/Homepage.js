@@ -65,7 +65,7 @@ const HomePage=() => {
                     domain={{y:[0,5]}}
                     width={1200}
                     containerComponent={
-                        <VictoryZoomContainer zoomDimension="x" allowPan={false} />
+                        <VictoryZoomContainer zoomDimension="x" allowPan={false} allowZoom={false} zoomDomain={{x: [0, 20]}} />
                     }
                     externalEventMutations={externalMutations}
                 >

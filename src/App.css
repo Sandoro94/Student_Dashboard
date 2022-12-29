@@ -8,11 +8,6 @@
 }
 
 
-
-.content{
-  border-style: double;
-
-}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -47,10 +42,6 @@
   }
 }
 
-.App {
-  text-align: center;
-}
-
 nav {
   display: flex;
   justify-content: space-around;
@@ -69,6 +60,14 @@ nav {
   list-style: none;
   flex-shrink: 2;
   flex-wrap: wrap;
+}
+
+.chart{
+  border-style: double;
+  overflow-x: scroll;
+  overflow-y: visible;
+  height: 700px;
+  width: fit-content;
 }
 
 .studentName {
